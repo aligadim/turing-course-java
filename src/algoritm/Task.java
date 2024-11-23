@@ -60,6 +60,28 @@ public class Task {
         return new int[]{};
     }
 
+    public boolean canConstruct(String ransomNote, String magazine) {
+        int[] ransomNoteArray = new int[26];
+        int[] magzineArray = new int[26];
+
+        for (char a : ransomNote.toCharArray()){
+            ransomNoteArray[a - 'a']++;
+        }
+        
+        for (char b : magazine.toCharArray()){
+            magzineArray[b - 'a']++;
+        }
+
+        for (int i = 0; i < 26; i++) {
+            if(ransomNoteArray[i]> magzineArray[i]){
+                return false;
+            }
+
+
+        }
+        return true;
+    }
+
     }
 
 
